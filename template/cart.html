@@ -1,0 +1,135 @@
+{% extends "header_footer.html" %}
+{% block cart %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+</head>
+<style>
+    .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 60rem;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<body>
+    <div class="small-conatiner cart-page">
+        <table>
+           <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="{% static 'image/kids1.webp' %}" alt="">
+                        <div>
+                            <p>Red Printed T-shirt</p>
+                            <small>Price:50.00</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$50.00</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="{% static 'image/kids1.webp' %}" alt="">
+                        <div>
+                            <p>Red Printed T-shirt</p>
+                            <small>Price:50.00</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$50.00</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="{% static 'image/kids1.webp' %}" alt="">
+                        <div>
+                            <p>Red Printed T-shirt</p>
+                            <small>Price:50.00</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$50.00</td>
+            </tr>
+        </table>
+
+        <div class="total_price">
+
+            <table>
+                <tr>
+                    <td>Subtoal</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td>Toal</td>
+                    <td>$200.00</td>
+                </tr>
+            </table>
+
+        </div>
+        <a href="/checkout"><button class="button" style="vertical-align:middle"><span>Purchase </span></button></a>
+
+    </div>
+</body>
+</html>
+{% endblock cart %}

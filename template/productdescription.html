@@ -1,0 +1,115 @@
+{% extends "header_footer.html" %}
+{% block prodesc %}
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+
+      .cart-color{
+        background-color: #ff532b;
+        color: white;
+        border: none;
+      }
+
+      .cart-color:hover{
+        background-color: #fd6f50;
+        color: white;
+      }
+
+      #red-color{
+   
+        background-color: red;
+
+      }
+
+      #black-color{
+
+        background-color: black;
+     
+      }
+
+      #green-color{
+  
+        background-color: green;
+ 
+      }
+
+      #yellow-color{
+   
+        background-color: yellow;
+   
+      }
+
+      #pink-color{
+     
+        background-color: pink;
+    
+      }
+
+      .color-option{
+        display: flex;  
+        margin: 10px;                     
+      }
+      
+      .color{
+        height: 30px;
+        width: 30px;
+        border: 1px solid black;
+        border-radius: 20px;
+        border: none;
+        margin: 5px;
+      }
+
+      .color:hover{
+        cursor: pointer;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+      <div class="container my-5">
+        {% for i in data %}
+          <div class="row">
+           <div class="col-sm-6 text-center align-self-center">
+            <img src="/media/{{i.image}}" alt="" class="img-fluid img-thumbnail">
+           </div>
+           <div class="col-sm-5 offset-sm-1">
+            <h2>{{i.title}}<p id="color-title" style="display:inline-block;"></p></h2>
+            <hr>
+            <p>{{i.description}}</p> <br>
+            <h4>{{i.price}}<small class="fw-light text-decoration-line-through">15999</small></h4> <br>
+
+            
+            
+            <a href="/cart/">  <button type="submit" class="btn btn-primary shadow px-5 py-2 cart-color">Add to Cart</button></a>
+          
+            <a href="/checkout" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
+            <h5 class="mt-5">Available Offers</h5>
+            <ul>
+             <li>Bank Offer 5% Unlimited Cashback on Flipkart Axis Bank Credit</li>
+             <li>Special Price Get extra ₹3000 off (price inclusive of discount)</li>
+             <li>No cost EMI ₹1,667/month. Standard EMI also available</li>
+             <li>Partner Offer ₹2000 Flipkart Gift Card on Every 1000th Transaction with a new Visa Debit/Credit Card</li>
+            </ul>
+           </div>
+          </div>
+          {% endfor %}
+         </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+     
+  </body>
+</html>
+ 
+
+
+{% endblock prodesc %}
+
+
